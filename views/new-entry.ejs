@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header'); %>
+    <title>new-entry</title>
+    <style>
+        .form-group{margin-top: 12px;}
+
+        body{
+            background: #bdc3c7; 
+            background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); 
+            background: linear-gradient(to right, #bdc3c7, #2c3e50); 
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('partials/navigation') %>
+
+    <div class="container p-4 col-md-8">
+        <form method="POST" action="/new-entry" class="card card-body">
+            <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" class="from-control" name="title" id="title" placeholder="Entry a new title" style="width: 100%;"
+                autofocus required>
+            </div>
+            <div class="form-group">
+                <label for="description">description</label>
+                <textarea name="description" id="description"  rows="3" class="form-control" required></textarea>
+            </div>
+            <div class="form-group " >
+                <label for="date">date</label><br>
+                <input type="date" class="from-control" name="date" id="date" placeholder="Entry a new date" required>
+            </div>
+            <div class="form-group ">
+                <label for="cowbell">weight</label><br>
+                <input type="range" id="weight" name="weight" min="0" max="20" value="2" step="1" list="tickmarks" style="width: 60%;" required>
+
+                <datalist id="tickmarks">
+                    <option value="0"></option>
+                    <option value="2"></option>
+                    <option value="4"></option>
+                    <option value="6"></option>
+                    <option value="8"></option>
+                    <option value="10"></option>
+                    <option value="12"></option>
+                    <option value="14"></option>
+                    <option value="16"></option>
+                    <option value="18"></option>
+                    <option value="20"></option>
+                </datalist>
+            </div>
+            <div class="form-group ">
+                <details>
+                    <div class="form-group">
+                        <label for="color">color</label><br>
+                        <input type="color" name="color" id="color">
+                    </div>
+                    <div class="form-group">
+                        <p>priority</p>
+                        <div>
+                            <input type="radio" id="normal" name="priority" value="normal" checked>
+                            <label for="normal">normal</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="important" name="priority" value="important" >
+                            <label for="important"> important</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="urgente" name="priority" value="urgente" >
+                            <label for="urgente"> urgente</label>
+                        </div>
+                    </div>
+                    <summary>
+                        data not required
+                    </summary>
+                </details>
+            </div><br>
+            <input type="submit" value="save note" class="btn btn-primary" style="width: 100%;">
+        </form>
+    </div>
+</body>
+
+</html>

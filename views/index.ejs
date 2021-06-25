@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partials/header'); %>
+    <title>blackboard</title>
+    <style>
+        body{
+            background: #bdc3c7; 
+            background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); 
+            background: linear-gradient(to right, #bdc3c7, #2c3e50); 
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('partials/navigation') %>
+
+    <div class="container p-4">
+        <div class="row">
+            <% note.forEach(function (notes){ %>
+                <div class="col-md-6 card-body">
+                    <div class="card ">
+                        <div class="card-header" id="colorNote">
+                            <h4><%= notes.title %></h4>
+                            <p><%= notes.priority %> para: <%= notes.date %>, peso: <%= notes.weight %></p>
+                            <div class="card-body">
+                                <p><%= notes.description %></p>
+                                <time><%= notes.date %></time>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>

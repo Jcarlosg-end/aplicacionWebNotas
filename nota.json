@@ -1,0 +1,10 @@
+[
+    {
+        "title": "autor Juan Gomez ",
+        "description": "hecho con: ejs, js, Bootstrap, json y node.js.  puedes crear una nueva nota desde el menu en (new-entry)",
+        "date": "2021-06-24",
+        "weight": "10",
+        "color": "green",
+        "priority": "normal"
+    }
+]
